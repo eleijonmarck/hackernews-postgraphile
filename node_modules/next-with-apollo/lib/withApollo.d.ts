@@ -1,0 +1,37 @@
+import ApolloClient from 'apollo-client';
+import { default as NextApp } from 'next/app';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { ApolloContext, InitApolloClient, WithApolloOptions, WithApolloProps } from './types';
+export default function withApollo<TCache = any>(client: InitApolloClient<TCache>, options?: WithApolloOptions): (App: typeof NextApp) => {
+    new (props: WithApolloProps<TCache> & import("next/app").AppInitialProps & {
+        Component: import("next").NextComponentType<import("next").NextPageContext, any, {}>;
+        router: import("next/dist/client/router").Router;
+    }): {
+        apollo: ApolloClient<TCache>;
+        render(): JSX.Element;
+        context: any;
+        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<WithApolloProps<TCache> & import("next/app").AppInitialProps & {
+            Component: import("next").NextComponentType<import("next").NextPageContext, any, {}>;
+            router: import("next/dist/client/router").Router;
+        }>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+        forceUpdate(callBack?: (() => void) | undefined): void;
+        readonly props: Readonly<WithApolloProps<TCache> & import("next/app").AppInitialProps & {
+            Component: import("next").NextComponentType<import("next").NextPageContext, any, {}>;
+            router: import("next/dist/client/router").Router;
+        }> & Readonly<{
+            children?: React.ReactNode;
+        }>;
+        state: Readonly<{}>;
+        refs: {
+            [key: string]: React.ReactInstance;
+        };
+    };
+    displayName: string;
+    propTypes: {
+        apolloState: PropTypes.Requireable<object>;
+        apollo: PropTypes.Requireable<object>;
+    };
+    getInitialProps: (appCtx: ApolloContext<any>) => Promise<{}>;
+    contextType?: React.Context<any> | undefined;
+};
