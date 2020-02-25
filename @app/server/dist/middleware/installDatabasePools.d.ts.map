@@ -1,0 +1,1 @@
+{"version":3,"file":"installDatabasePools.d.ts","sourceRoot":"","sources":["../../src/middleware/installDatabasePools.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,IAAI,CAAC;AAC1B,OAAO,EAAE,OAAO,EAAE,MAAM,SAAS,CAAC;AAGlC,wBAAgB,aAAa,CAAC,GAAG,EAAE,OAAO,GAAG,IAAI,CAEhD;AACD,wBAAgB,aAAa,CAAC,GAAG,EAAE,OAAO,GAAG,IAAI,CAEhD;;AAeD,wBAsBE"}
